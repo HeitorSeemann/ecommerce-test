@@ -4,7 +4,6 @@ class LoginPage {
         this.page = page;
     }
 
-
     async login() {
         await this.page.goto('https://automationexercise.com');
     }
