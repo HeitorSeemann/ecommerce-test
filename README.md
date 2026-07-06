@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Test Automation Suite
 
-This repository contains an End-to-End (E2E) automated testing project built to validate critical user flows and functionalities on e-commerce platforms (such as user registration and authentication workflows).
+This repository contains an End-to-End (E2E) automated testing project built to validate critical user flows and functionalities on e-commerce platforms (such as user registration and authentication workflows). This automation uses the Person-data api to get person data, URL: https://github.com/HeitorSeemann/person-data.
 
 The primary objective is to implement high-quality test architecture practices, ensuring stable, clean, and highly maintainable automation scripts.
 
@@ -29,6 +29,8 @@ The primary objective is to implement high-quality test architecture practices, 
 Ensure you have the following installed on your local machine:
 * [Node.js](https://nodejs.org) (LTS version recommended)
 * [Git](https://git-scm.com)
+
+⚠️ CI/CD Note: Because this suite relies strictly on a local high-performance Data Factory framework running on localhost, execution is designed for local test environments and specialized staging gates, deliberately bypassing cloud-hosted GitHub Actions runners to ensure environment isolation.
 
 ### Installation Steps
 
