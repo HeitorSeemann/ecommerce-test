@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
   cartPage = new CartPage(page);
 });
 
-test('Select a product and add it to the cart on Automation Exercise', async ({ page }) => {
+test('Select a product and add it to the cart on Automation Exercise ', async ({ page }) => {
   await page.goto('/'); 
   await cartPage.addToCart();
   await cartPage.checkTheProductAdded();
