@@ -1,84 +1,34 @@
 # 🛒 E-Commerce Test Automation Suite
 
-This repository contains an End-to-End (E2E) automated testing project built to validate critical user flows and functionalities on e-commerce platforms (such as user registration and authentication workflows). This automation uses the Person-data api to get person data, URL: https://github.com/HeitorSeemann/person-data.
-
-The primary objective is to implement high-quality test architecture practices, ensuring stable, clean, and highly maintainable automation scripts.
+An E2E automated testing project validating critical e-commerce flows using Playwright, designed to showcase advanced POM architecture and maintainable test scripts.
 
 ## 🛠️ Built With
-
-* **[Playwright](https://playwright.dev)** - Modern, fast, and reliable browser automation framework.
-* **JavaScript** - Core programming language.
-* **Page Object Model (POM)** - Design pattern applied to decouple page structure from test logic, maximizing code reusability.
-* **GitHub Actions** - CI/CD pipeline setup for continuous, automated test execution on code changes.
+* **Playwright** & **JavaScript**
+* **Page Object Model (POM)**
+* **Network Interception** (Service-Oriented Data Mocking)
 
 ## 📂 Project Structure
-
 ```text
-├── .github/workflows/   # CI/CD integration configurations (GitHub Actions)
-├── pages/               # Page Object Model classes (selectors and actions)
-│   └── SignupPage.js    # Example: User registration workflows
-├── tests/               # Test specification files (.spec.js)
-├── playwright.config.js # Global Playwright setups (timeouts, browsers, etc.)
-├── package.json         # Project manifests, scripts, and dependencies
-└── README.md            # Project documentation
+├── pages/                   # POM classes (selectors/actions)
+├── services/                # Network interception & data mocking
+└── tests/                   # Specification files
 ```
 
 ## 🚀 Getting Started
-
-### Prerequisites
-Ensure you have the following installed on your local machine:
-* [Node.js](https://nodejs.org) (LTS version recommended)
-* [Git](https://git-scm.com)
-
-⚠️ CI/CD Note: Because this suite relies strictly on a local high-performance Data Factory framework running on localhost, execution is designed for local test environments and specialized staging gates, deliberately bypassing cloud-hosted GitHub Actions runners to ensure environment isolation.
-
-### Installation Steps
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com
-   ```
-
-2. **Navigate into the project directory:**
-   ```bash
-   cd ecommerce-test
-   ```
-
-3. **Install the node dependencies:**
-   ```bash
-   npm install
-   ```
-
-4. **Install the required Playwright browsers:**
-   ```bash
-   npx playwright install
-   ```
+```bash
+git clone https://github.com
+cd ecommerce-test
+npm install
+npx playwright install
+```
 
 ## 🧪 Running the Tests
+* **Run:** `npm run test`
+* **UI Mode:** `npx playwright test --ui`
+* **Switch Environment:** `ENV=test npx playwright test`
 
-Execute your test suites using the following automated command scripts:
-
-* **Run all tests in Headless mode (background execution):**
-  ```bash
-  npx playwright test
-  ```
-
-* **Run tests using the Playwright Interactive UI Mode:**
-  ```bash
-  npx playwright test --ui
-  ```
-
-* **Run a single specific test file:**
-  ```bash
-  npx playwright test tests/filename.spec.js
-  ```
-
-* **Generate and view the HTML execution report:**
-  ```bash
-  npx playwright show-report
-  ```
-
-## 🧠 Best Practices Applied
-* **Stable Web Selectors:** Native usage of testing attributes (`data-qa` and explicit `IDs`) to minimize flaky tests.
-* **Smart Timeouts Management:** Handles asynchronous state transitions smoothly across multi-step registration screens.
-* **Dynamic Test Data:** Implements randomized data generation (e.g., dynamic emails) to prevent duplicate database constraints on repeated runs.
+## 🧠 Technical Highlights
+* **Architecture:** POM + Service Layer (Strict decoupling).
+* **Isolation:** Network interception via `PersonService` (No hardcoded URLs).
+* **Data-Driven:** Dynamic payload generation.
+* **Stability:** Use of `data-qa` attributes for selectors.
