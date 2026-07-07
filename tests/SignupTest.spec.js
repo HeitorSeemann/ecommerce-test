@@ -1,19 +1,17 @@
 const { test, expect } = require('@playwright/test');
-const LoginPage = require('../pages/LoginPage');
 const SignupPage = require('../pages/SignupPage');
+const PersonService = require('../services/PersonService');
 
-let loginPage, signupPage;
+test.describe('User Registration Flow', () => {
 
-test.beforeEach(async ({ page }) => {
-  loginPage = new LoginPage(page);
-  signupPage = new SignupPage(page);
+    test('Should register user using dynamic environment data and random email', async ({ page }) => {
+        const signupPage = new SignupPage(page);
+        const personService = new PersonService(page);
+        const personData = await personService.mockData();
+        await page.goto('/'); 
+        await signupPage.signupBegin(personData);
+        await signupPage.signupFull(personData);
+        await expect(page.locator('[data-qa="account-created"]')).toBeVisible();
+    });
+
 });
-
-
-test('Should signup', async ({ page }) => {
-  await loginPage.login();
-  await signupPage.signupBegin();
-  await signupPage.signupFull();
-});
-
-

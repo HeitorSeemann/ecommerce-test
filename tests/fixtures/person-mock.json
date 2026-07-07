@@ -1,0 +1,12 @@
+{
+  "genderId": 1,
+  "name": "Heitor Seemann",
+  "password": "pass",
+  "firstName": "Heitor",
+  "lastName": "Seemann",
+  "address": "Street 5",
+  "state": "RS",
+  "city": "POA",
+  "zipcode": "545454",
+  "mobileNumber": "4343434"
+}
