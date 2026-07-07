@@ -1,15 +1,13 @@
 {
-  "name": "ecommecer-test",
+  "name": "ecommerce-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "E-Commerce Test Automation Suite",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "@playwright/test": "^1.61.0",
-    "@types/node": "^26.0.0"
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.40.0"
   }
 }
