@@ -1,18 +1,6 @@
 # 🛒 E-Commerce Test Automation Suite
 
-An E2E automated testing project validating critical e-commerce flows using Playwright, designed to showcase advanced POM architecture and maintainable test scripts.
-
-## 🛠️ Built With
-* **Playwright** & **JavaScript**
-* **Page Object Model (POM)**
-* **Network Interception** (Service-Oriented Data Mocking)
-
-## 📂 Project Structure
-```text
-├── pages/                   # POM classes (selectors/actions)
-├── services/                # Network interception & data mocking
-└── tests/                   # Specification files
-```
+An E2E automated testing project validating critical e-commerce flows using Playwright.
 
 ## 🚀 Getting Started
 ```bash
@@ -23,12 +11,23 @@ npx playwright install
 ```
 
 ## 🧪 Running the Tests
-* **Run:** `npm run test`
-* **UI Mode:** `npx playwright test --ui`
-* **Switch Environment:** `ENV=test npx playwright test`
+- **Run:** `npm run test`
+- **UI Mode:** `npx playwright test --ui`
 
-## 🧠 Technical Highlights
-* **Architecture:** POM + Service Layer (Strict decoupling).
-* **Isolation:** Network interception via `PersonService` (No hardcoded URLs).
-* **Data-Driven:** Dynamic payload generation.
-* **Stability:** Use of `data-qa` attributes for selectors.
+## 🐳 Running with Docker
+This project includes a Docker configuration for containerized testing.
+
+### 1. Build the Image
+```bash
+docker build -t ecommerce-test-app .
+```
+
+### 2. Run the Tests
+```bash
+docker run --init --ipc=host --rm ecommerce-test-app
+```
+
+## 🧠 Highlights
+- POM Architecture
+- Network Interception
+- Data-Driven
