@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build: .
+    image: ecommerce-test-runner
+    environment:
+      - ENV=test
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
